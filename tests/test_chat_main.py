@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 
-from src.chat.main import _normalize_messages, chat
+from src.ai.chat.main import _normalize_messages, chat
 
 
 class ChatMainTests(unittest.TestCase):

@@ -29,7 +29,7 @@ Reflection can route the workflow back to search. It stops when the findings are
 `invoke` runs the workflow synchronously with `compiled_flow.invoke()`. It waits for the full research run, prints the final answer and selected source URL, and returns only the answer text:
 
 ```python
-from src.web_researcher.research_flow import invoke
+from src.ai.web_researcher.research_flow import invoke
 
 answer = invoke("What are the latest developments in battery recycling?")
 print(answer)
@@ -40,7 +40,7 @@ print(answer)
 `stream` is an iterator backed by `compiled_flow.stream(..., stream_mode="updates")`. As graph nodes finish, it calls the optional `on_progress` callback with labels such as `Searching the web` and `Synthesizing findings`. When the answer node finishes, it yields the completed answer with its source URL:
 
 ```python
-from src.web_researcher.research_flow import stream
+from src.ai.web_researcher.research_flow import stream
 
 for text in stream("What are the latest developments in battery recycling?", on_progress=print):
 	print(text, end="")

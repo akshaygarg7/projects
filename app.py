@@ -1,7 +1,7 @@
 import streamlit as st
 
-from src.chat.main import chat
-from src.web_researcher.research_flow import stream as web_researcher
+from src.ai.chat.main import chat
+from src.ai.web_researcher.research_flow import stream as web_researcher
 
 # 1. Page Configuration
 st.set_page_config(page_title="Multi-Module Chatbot", page_icon="💬", layout="wide")

@@ -1,10 +1,10 @@
 
 from langchain.agents import create_agent
 
-from src.common.llm.model_strategy import get_model
-from src.web_researcher.schema import ResearchState, PlannerOutput, SynthesizeOutput, ReflectOutput, AnswerOutput
-from src.web_researcher.prompts import PROMPT_PLAN, PROMPT_SYNTHESIZE, PROMPT_REFLECT, PROMPT_ANSWER
-from src.common.tools.search import search
+from src.ai.common.llm.model_strategy import get_model
+from src.ai.web_researcher.schema import ResearchState, PlannerOutput, SynthesizeOutput, ReflectOutput, AnswerOutput
+from src.ai.web_researcher.prompts import PROMPT_PLAN, PROMPT_SYNTHESIZE, PROMPT_REFLECT, PROMPT_ANSWER
+from src.ai.common.tools.search import search
 
 MAX_REFLECTION_ITERATIONS = 2
 

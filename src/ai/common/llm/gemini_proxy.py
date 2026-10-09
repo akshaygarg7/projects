@@ -1,6 +1,6 @@
 import os
 
-from src.common.llm.base_proxy import BaseProxy
+from src.ai.common.llm.base_proxy import BaseProxy
 from google import genai
 
 class Gemini(BaseProxy):

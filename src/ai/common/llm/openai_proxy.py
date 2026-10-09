@@ -1,7 +1,7 @@
 import os
 
 from openai import OpenAI
-from src.common.llm.base_proxy import BaseProxy
+from src.ai.common.llm.base_proxy import BaseProxy
 
 MODEL = "gpt-5.6-luna"
 

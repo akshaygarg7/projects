@@ -4,7 +4,7 @@ from langgraph.graph import StateGraph, START, END
 from collections.abc import Callable, Iterator
 from typing import Any
 
-from src.web_researcher.agents import (
+from src.ai.web_researcher.agents import (
     MAX_REFLECTION_ITERATIONS,
     answer,
     planner,
@@ -13,7 +13,7 @@ from src.web_researcher.agents import (
     synthesizer,
 )
 
-from src.web_researcher.schema import ResearchState
+from src.ai.web_researcher.schema import ResearchState
 
 
 print("init graph")

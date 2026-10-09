@@ -34,7 +34,7 @@ uv run --env-file .env python -c "from src.chat.main import chat; print(chat('Wh
 The module also accepts existing history and a new user message:
 
 ```python
-from src.chat.main import chat
+from src.ai.chat.main import chat
 
 history = [
 	{"role": "user", "content": "What is a neural network?"},

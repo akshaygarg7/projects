@@ -1,6 +1,6 @@
 import unittest
 
-from src.common.llm.model_strategy import get_model_strategy
+from src.ai.common.llm.model_strategy import get_model_strategy
 
 
 class ModelStrategyTests(unittest.TestCase):

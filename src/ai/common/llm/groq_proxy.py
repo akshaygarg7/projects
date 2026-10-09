@@ -1,6 +1,6 @@
 import os
 
-from src.common.llm.base_proxy import BaseProxy
+from src.ai.common.llm.base_proxy import BaseProxy
 from openai import OpenAI
 from langchain_groq import ChatGroq
 

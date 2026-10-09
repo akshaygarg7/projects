@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 
-from src.web_researcher import research_flow
+from src.ai.web_researcher import research_flow
 
 
 class ResearchFlowStreamTests(unittest.TestCase):

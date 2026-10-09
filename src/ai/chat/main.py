@@ -1,4 +1,4 @@
-from src.common.llm.model_strategy import get_model
+from src.ai.common.llm.model_strategy import get_model
 
 MAX_HISTORY_MESSAGES = 5
 

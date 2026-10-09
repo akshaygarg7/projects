@@ -1,7 +1,7 @@
 import os
 from abc import ABC, abstractmethod
-from src.common.llm.gemini_proxy import Gemini
-from src.common.llm.groq_proxy import Groq
+from src.ai.common.llm.gemini_proxy import Gemini
+from src.ai.common.llm.groq_proxy import Groq
 
 def get_model(provider_name=None):
     provider = (provider_name or os.getenv("MODEL_PROVIDER", "groq")).lower()
