@@ -26,18 +26,21 @@ Reflection can route the workflow back to search. It stops when the findings are
 
 ### `invoke(question)`
 
-`invoke` runs the workflow synchronously with `compiled_flow.invoke()`. It waits for the full research run, prints the final answer and selected source URL, and returns only the answer text:
+`invoke` runs the workflow synchronously with `compiled_flow.invoke()`. It waits for the full research run, prints the final answer and selected source URL, and returns only the answer text. Each completed run is appended as one JSON object per line to `research_results.jsonl` in the current directory. Records include the question, answer, findings, source URLs, reflection state, and timestamp. Pass `results_path` to `invoke` or `stream` to choose another file:
 
 ```python
 from src.ai.web_researcher.research_flow import invoke
 
-answer = invoke("What are the latest developments in battery recycling?")
+answer = invoke(
+	"What are the latest developments in battery recycling?",
+	results_path="evaluation/research_results.jsonl",
+)
 print(answer)
 ```
 
 ### `stream(question, on_progress=None)`
 
-`stream` is an iterator backed by `compiled_flow.stream(..., stream_mode="updates")`. As graph nodes finish, it calls the optional `on_progress` callback with labels such as `Searching the web` and `Synthesizing findings`. When the answer node finishes, it yields the completed answer with its source URL:
+`stream` is an iterator backed by `compiled_flow.stream(..., stream_mode="updates")`. As graph nodes finish, it calls the optional `on_progress` callback with labels such as `Searching the web` and `Synthesizing findings`. When the answer node finishes, it yields the completed answer with its source URL and appends the run to the same JSONL format:
 
 ```python
 from src.ai.web_researcher.research_flow import stream
@@ -53,7 +56,7 @@ Complete the setup steps mentioned in ReadMe at root directory.
 Run the web-researcher in terminal
 
 ```sh
-uv run --env-file .env python -m src.web_researcher.research_flow "<your question>"
+uv run --env-file .env python -m src.ai.web_researcher.research_flow "<your question>"
 ```
 It will ask you to enter research topic in terminal itself.
 
